@@ -6,25 +6,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta charset="utf-8" />
+  <meta name="description" content="WebVOWL - Web-based Visualization of Ontologies" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <title>WestLaw</title>
 
   <!-- Bootstrap -->
   <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <!-- NProgress -->
-  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-  <!-- iCheck -->
-  <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	
-  <!-- bootstrap-progressbar -->
-  <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-  <!-- JQVMap -->
-  <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
-  <!-- bootstrap-daterangepicker -->
-  <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
+  <!--webvowl-->
+  <link rel="stylesheet" type="text/css" href="../vendors/webvowl_1.0.4/css/webvowl.css" />
+  <link rel="stylesheet" type="text/css" href="../vendors/webvowl_1.0.4/css/webvowl.app.css" />
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
@@ -119,18 +114,142 @@
 
     <!-- page content -->
     <div class="right_col" role="main">
+      <main>
+        <div id="canvasArea">
+          <div id="browserCheck" class="hidden">
+            WebVOWL does not work properly in Internet Explorer and Microsoft Edge. Please use another browser, such as
+            <a href="https://www.mozilla.org/de/firefox/">Mozilla Firefox</a> or
+            <a href="https://www.google.com/chrome/">Google Chrome</a>, to run WebVOWL.
+            <label id="killWarning">Hide warning</label>
+          </div>
+          <div id="loading-info">
+            <div id="loading-error" class="hidden">
+              <div id="error-info"></div>
+              <div id="error-description-button" class="hidden">Show error details</div>
+              <div id="error-description-container" class="hidden">
+                <pre id="error-description"></pre>
+              </div>
+            </div>
+            <div id="loading-progress" class="hidden">
+              <span>Loading ontology... </span>
+              <div class="spin">&#8635;</div><br>
+              <div id="myProgress">
+              <div id="myBar"></div>
+            </div>
+            </div>
+          </div>
+          <div id="graph"></div>
+        </div>
 
+        <aside id="detailsArea">
+          <section id="generalDetails">
+            <h1 id="title"></h1>
+            <h5>Version: <span id="version"></span></h5>
+            <h5>Author(s): <span id="authors"></span></h5>
+            <br>
+            <h3 class="accordion-trigger accordion-trigger-active">Description</h3>
+            <div class="accordion-container scrollable">
+              <p id="description"></p>
+            </div>
+            <br>
+            <h3 class="accordion-trigger">Metadata</h3>
+            <div id="ontology-metadata" class="accordion-container"></div>
+            <br>
+            <h3 class="accordion-trigger">Statistics</h3>
+            <div class="accordion-container">
+              <p class="statisticDetails">Classes: <span id="classCount"></span></p>
+              <p class="statisticDetails">Object prop.: <span id="objectPropertyCount"></span></p>
+              <p class="statisticDetails">Datatype prop.: <span id="datatypePropertyCount"></span></p>
+              <div class="small-whitespace-separator"></div>
+              <p class="statisticDetails">Individuals: <span id="individualCount"></span></p>
+              <div class="small-whitespace-separator"></div>
+              <p class="statisticDetails">Nodes: <span id="nodeCount"></span></p>
+              <p class="statisticDetails">Edges: <span id="edgeCount"></span></p>
+            </div>
+            <br>
+            <h3 class="accordion-trigger" id="selection-details-trigger">Selection Details</h3>
+            <div class="accordion-container" id="selection-details">
+              <div id="classSelectionInformation" class="hidden">
+                <p class="propDetails">Name: <span id="name"></span></p>
+                <p class="propDetails">Type: <span id="typeNode"></span></p>
+                <p class="propDetails">Equiv.: <span id="classEquivUri"></span></p>
+                <p class="propDetails">Disjoint: <span id="disjointNodes"></span></p>
+                <p class="propDetails">Charac.: <span id="classAttributes"></span></p>
+                <p class="propDetails">Individuals: <span id="individuals"></span></p>
+                <p class="propDetails">Description: <span id="nodeDescription"></span></p>
+                <p class="propDetails">Comment: <span id="nodeComment"></span></p>
+              </div>
+              <div id="propertySelectionInformation" class="hidden">
+                <p class="propDetails">Name: <span id="propname"></span></p>
+                <p class="propDetails">Type: <span id="typeProp"></span></p>
+                <p id="inverse" class="propDetails">Inverse: <span></span></p>
+                <p class="propDetails">Domain: <span id="domain"></span></p>
+                <p class="propDetails">Range: <span id="range"></span></p>
+                <p class="propDetails">Subprop.: <span id="subproperties"></span></p>
+                <p class="propDetails">Superprop.: <span id="superproperties"></span></p>
+                <p class="propDetails">Equiv.: <span id="propEquivUri"></span></p>
+                <p id="infoCardinality" class="propDetails">Cardinality: <span></span></p>
+                <p id="minCardinality" class="propDetails">Min. cardinality: <span></span></p>
+                <p id="maxCardinality" class="propDetails">Max. cardinality: <span></span></p>
+                <p class="propDetails">Charac.: <span id="propAttributes"></span></p>
+                <p class="propDetails">Description: <span id="propDescription"></span></p>
+                <p class="propDetails">Comment: <span id="propComment"></span></p>
+              </div>
+              <br>
+              <div id="noSelectionInformation">
+                <p><span>Select an element in the visualization.</span></p>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <nav id="optionsArea">
+          <ul id="optionsMenu">
+            <li id="pauseOption"><a id="pause-button" href="#">Pause</a></li>
+            <li id="resetOption"><a id="reset-button" href="#" type="reset">Reset</a></li>
+            <li id="moduleOption"><a href="#">Modes</a>
+              <ul class="toolTipMenu module">
+                <li class="toggleOption" id="dynamicLabelWidth"></li>
+                <li class="toggleOption" id="pickAndPinOption"></li>
+                <li class="toggleOption" id="nodeScalingOption"></li>
+                <li class="toggleOption" id="compactNotationOption"></li>
+                <li class="toggleOption" id="colorExternalsOption"></li>
+              </ul>
+            </li>
+            <li id="filterOption"><a href="#">Filter</a>
+              <ul class="toolTipMenu filter">
+                <li class="toggleOption" id="datatypeFilteringOption"></li>
+                <li class="toggleOption" id="objectPropertyFilteringOption"></li>
+                <li class="toggleOption" id="subclassFilteringOption"></li>
+                <li class="toggleOption" id="disjointFilteringOption"></li>
+                <li class="toggleOption" id="setOperatorFilteringOption"></li>
+                <li class="slideOption" id="nodeDegreeFilteringOption"></li>
+              </ul>
+            </li>
+            <li id="gravityOption"><a href="#">Gravity</a>
+              <ul class="toolTipMenu gravity">
+                <li class="slideOption" id="classSliderOption"></li>
+                <li class="slideOption" id="datatypeSliderOption"></li>
+              </ul>
+            </li>
+            <li id="li_locationSearch"> <a title="Enter term." href="#" id="locateSearchResult">&#8853;</a></li>
+            <li class="searchMenu" id="searchMenuId">
+              <input class="searchInputText" type="text" id="search-input-text" placeholder="Search">
+              <ul class="searchMenuEntry" id="searchEntryContainer">
+              </ul>
+            </li>
+            <li id="li_right" style="float:left">
+              <a href="#" id="RightButton"></a>
+            </li>
+            <li id="li_left" style="float:left">
+              <a href="#" id="LeftButton"></a>
+            </li>
+          </ul>
+        </nav>
+      </main>
     </div>
     <!-- /page content -->
 
-    <!-- footer content -->
-    <footer>
-      <div class="pull-right">
-        © 2017 Titans Reuters All rights reserved
-      </div>
-      <div class="clearfix"></div>
-    </footer>
-    <!-- /footer content -->
   </div>
 </div>
 
@@ -138,42 +257,15 @@
 <script src="../vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<script src="../vendors/nprogress/nprogress.js"></script>
-<!-- Chart.js -->
-<script src="../vendors/Chart.js/dist/Chart.min.js"></script>
-<!-- gauge.js -->
-<script src="../vendors/gauge.js/dist/gauge.min.js"></script>
-<!-- bootstrap-progressbar -->
-<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-<!-- iCheck -->
-<script src="../vendors/iCheck/icheck.min.js"></script>
-<!-- Skycons -->
-<script src="../vendors/skycons/skycons.js"></script>
-<!-- Flot -->
-<script src="../vendors/Flot/jquery.flot.js"></script>
-<script src="../vendors/Flot/jquery.flot.pie.js"></script>
-<script src="../vendors/Flot/jquery.flot.time.js"></script>
-<script src="../vendors/Flot/jquery.flot.stack.js"></script>
-<script src="../vendors/Flot/jquery.flot.resize.js"></script>
-<!-- Flot plugins -->
-<script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-<script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-<script src="../vendors/flot.curvedlines/curvedLines.js"></script>
-<!-- DateJS -->
-<script src="../vendors/DateJS/build/date.js"></script>
-<!-- JQVMap -->
-<script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
-<script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-<!-- bootstrap-daterangepicker -->
-<script src="../vendors/moment/min/moment.min.js"></script>
-<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
-	
+<!--web owl -->
+<script src="../vendors/webvowl_1.0.4/js/d3.min.js"></script>
+<script src="../vendors/webvowl_1.0.4/js/webvowl.js"></script>
+<script src="../vendors/webvowl_1.0.4/js/webvowl.app.js"></script>
+<script>
+    window.onload = webvowl.app().initialize;
+</script>
+
 </body>
 </html>
