@@ -259,7 +259,8 @@ td, th {
     }
 
     .table td, .table th {
-        background-color: #fff !important
+        background-color: #fff !important;
+        white-space:pre
     }
 
     .table-bordered td, .table-bordered th {
@@ -2729,6 +2730,7 @@ th {
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd
+    white-space:pre
 }
 
 .table > thead > tr > th {
@@ -2745,7 +2747,7 @@ th {
 }
 
 .table .table {
-    background-color: #fff
+    background-color: #fff;
 }
 
 .table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
@@ -3429,33 +3431,35 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-default {
-    color: #333;
-    background-color: #fff;
+    margin-top: 5px;
+    color: #000000;
+    background-color: lightskyblue;
     border-color: #ccc
 }
 
 .btn-default.focus, .btn-default:focus {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #000000;
+    background-color: cornflowerblue;
     border-color: #8c8c8c
 }
 
 .btn-default:hover {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #000000;
+    background-color: cornflowerblue;
     border-color: #adadad
 }
 
 .btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #000000;
+    background-color: cornflowerblue;
     border-color: #adadad
 }
 
 .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
-    color: #333;
-    background-color: #d4d4d4;
-    border-color: #8c8c8c
+    color:#000000;
+    background-color: lightskyblue;
+    border-color: #8c8c8c;
+
 }
 
 .btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
