@@ -35,7 +35,7 @@
                         <input type="password" class="form-control" placeholder="Password" required="" />
                     </div>
                     <div>
-                        <a class="btn btn-default submit" href="index.html">Log in</a>
+                        <a class="btn btn-default submit" href="index.jsp">Log in</a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -73,7 +73,7 @@
                         <input type="password" class="form-control" placeholder="Password" required="" />
                     </div>
                     <div>
-                        <a class="btn btn-default submit" href="index.html">Submit</a>
+                        <a class="btn btn-default submit" href="index.jsp">Submit</a>
                     </div>
 
                     <div class="clearfix"></div>

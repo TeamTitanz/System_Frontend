@@ -7,15 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>WestLaw</title>
+  <title>TitanLaw</title>
 
   <!-- Bootstrap -->
-  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Custom Theme Style -->
-  <link href="../build/css/custom.min.css" rel="stylesheet">
+  <link href="build/css/custom.min.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -24,7 +24,7 @@
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-          <a href="index.html" class="site_title"><img src="images/logo.png" width="50" height="35"/> </i> <span>WestLaw</span></a>
+          <a href="index.jsp" class="site_title"><img src="production/images/logo.png" width="50" height="35"/> </i> <span>TitanLaw</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -32,7 +32,7 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
           <div class="profile_pic">
-            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
           </div>
           <div class="profile_info">
             <span>Welcome,</span>
@@ -49,8 +49,8 @@
             <h3>Explorer</h3>
             <ul class="nav side-menu">
               <li><a><i class="fa fa-home"></i> Home </a></li>
-              <li><a href="search.html"><i class="fa fa-edit"></i> Case Search </a></li>
-              <li><a href="explorer.html"><i class="fa fa-desktop"></i>Ontology Explorer </a></li>
+              <li><a href="search.jsp"><i class="fa fa-edit"></i> Case Search </a></li>
+              <li><a href="explorer.jsp"><i class="fa fa-desktop"></i>Ontology Explorer </a></li>
             </ul>
           </div>
         </div>
@@ -67,7 +67,7 @@
           <a data-toggle="tooltip" data-placement="top" title="Lock">
             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
           </a>
-          <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+          <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.jsp">
             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
           </a>
         </div>
@@ -97,7 +97,7 @@
                   </a>
                 </li>
                 <li><a href="javascript:;">Help</a></li>
-                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                <li><a href="login.jsp"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
               </ul>
             </li>
           </ul>
@@ -124,12 +124,12 @@
 </div>
 
 <!-- jQuery -->
-<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="../build/js/custom.min.js"></script>
-	
+<script src="build/js/custom.min.js"></script>
+
 </body>
 </html>

@@ -7,21 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>WestLaw</title>
+  <title>TitanLaw</title>
 
   <!-- Bootstrap -->
-  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Datatables -->
-  <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-  <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-  <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-  <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-  <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom Theme Style -->
-  <link href="../build/css/custom.min.css" rel="stylesheet">
+  <link href="build/css/custom.min.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -30,7 +30,7 @@
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-          <a href="index.html" class="site_title"><img src="images/logo.png" width="50" height="35"/> </i> <span>WestLaw</span></a>
+          <a href="index.jsp" class="site_title"><img src="production/images/logo.png" width="50" height="35"/> </i> <span>TitanLaw</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -38,7 +38,7 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
           <div class="profile_pic">
-            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
           </div>
           <div class="profile_info">
             <span>Welcome,</span>
@@ -54,9 +54,9 @@
           <div class="menu_section">
             <h3>Explorer</h3>
             <ul class="nav side-menu">
-              <li><a href="index.html"> <i class="fa fa-home"></i> Home </a></li>
+              <li><a href="index.jsp"> <i class="fa fa-home"></i> Home </a></li>
               <li> <a><i class="fa fa-edit"></i> Case Search </a></li>
-              <li><a href="explorer.html"> <i class="fa fa-desktop"></i> Ontology Explorer </a></li>
+              <li><a href="explorer.jsp"> <i class="fa fa-desktop"></i> Ontology Explorer </a></li>
             </ul>
           </div>
         </div>
@@ -73,7 +73,7 @@
           <a data-toggle="tooltip" data-placement="top" title="Lock">
             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
           </a>
-          <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+          <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.jsp">
             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
           </a>
         </div>
@@ -103,7 +103,7 @@
                   </a>
                 </li>
                 <li><a href="javascript:;">Help</a></li>
-                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                <li><a href="login.jsp"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
               </ul>
             </li>
           </ul>
@@ -116,14 +116,16 @@
     <div class="right_col" role="main">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
+          <form action = "Request" method = "GET">
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12">Case in Natural Language </label>
               <div class="col-md-9 col-sm-9 col-xs-12">
-                <textarea class="resizable_textarea form-control" placeholder="Enter your full case in details as possible."></textarea>
+                <textarea class="resizable_textarea form-control" placeholder="Enter your full case in details as possible." name="query"></textarea>
               </div>
             </div>
           <br>
           <button type="submit" class="btn btn-default"  style="float: right;">Search</button>
+          </form>
           </div>
         </div>
 
@@ -267,25 +269,25 @@
 </div>
 
 <!-- jQuery -->
-<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Datatables -->
-<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="../build/js/custom.min.js"></script>
+<script src="build/js/custom.min.js"></script>
 	
 </body>
 </html>

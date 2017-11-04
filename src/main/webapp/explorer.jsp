@@ -11,17 +11,17 @@
   <meta name="robots" content="noindex,nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <title>WestLaw</title>
+  <title>TitanLaw</title>
 
   <!-- Bootstrap -->
-  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!--webvowl-->
-  <link rel="stylesheet" type="text/css" href="../vendors/webvowl_1.0.4/css/webvowl.css" />
-  <link rel="stylesheet" type="text/css" href="../vendors/webvowl_1.0.4/css/webvowl.app.css" />
+  <link rel="stylesheet" type="text/css" href="vendors/webvowl_1.0.4/css/webvowl.css" />
+  <link rel="stylesheet" type="text/css" href="vendors/webvowl_1.0.4/css/webvowl.app.css" />
   <!-- Custom Theme Style -->
-  <link href="../build/css/custom.min.css" rel="stylesheet">
+  <link href="build/css/custom.min.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -30,7 +30,7 @@
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-          <a href="index.html" class="site_title"><img src="images/logo.png" width="50" height="35"/> </i> <span>WestLaw</span></a>
+          <a href="index.jsp" class="site_title"><img src="production/images/logo.png" width="50" height="35"/> </i> <span>TitanLaw</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -38,7 +38,7 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
           <div class="profile_pic">
-            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
           </div>
           <div class="profile_info">
             <span>Welcome,</span>
@@ -54,8 +54,8 @@
           <div class="menu_section">
             <h3>Explorer</h3>
             <ul class="nav side-menu">
-              <li><a href="index.html"><i class="fa fa-home"></i> Home </a></li>
-              <li><a href="search.html"> <i class="fa fa-edit"></i> Case Search </a></li>
+              <li><a href="index.jsp"><i class="fa fa-home"></i> Home </a></li>
+              <li><a href="search.jsp"> <i class="fa fa-edit"></i> Case Search </a></li>
               <li><a><i class="fa fa-desktop"></i> Ontology Explorer </a></li>
             </ul>
           </div>
@@ -73,7 +73,7 @@
           <a data-toggle="tooltip" data-placement="top" title="Lock">
             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
           </a>
-          <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+          <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.jsp">
             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
           </a>
         </div>
@@ -92,7 +92,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="">
               <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="images/img.jpg" alt="">Vindula Jayawardana
+                <img src="production/images/img.jpg" alt="">Vindula Jayawardana
                 <span class=" fa fa-angle-down"></span>
               </a>
               <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -103,7 +103,7 @@
                   </a>
                 </li>
                 <li><a href="javascript:;">Help</a></li>
-                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                <li><a href="login.jsp"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
               </ul>
             </li>
           </ul>
@@ -138,9 +138,51 @@
             </div>
             </div>
           </div>
+          <nav id="optionsArea">
+            <ul id="optionsMenu">
+              <li id="pauseOption"><a id="pause-button" href="#">Pause</a></li>
+              <li id="resetOption"><a id="reset-button" href="#" type="reset">Reset</a></li>
+              <li id="moduleOption"><a href="#">Modes</a>
+                <ul class="toolTipMenu module">
+                  <li class="toggleOption" id="dynamicLabelWidth"></li>
+                  <li class="toggleOption" id="pickAndPinOption"></li>
+                  <li class="toggleOption" id="nodeScalingOption"></li>
+                  <li class="toggleOption" id="compactNotationOption"></li>
+                  <li class="toggleOption" id="colorExternalsOption"></li>
+                </ul>
+              </li>
+              <li id="filterOption"><a href="#">Filter</a>
+                <ul class="toolTipMenu filter">
+                  <li class="toggleOption" id="datatypeFilteringOption"></li>
+                  <li class="toggleOption" id="objectPropertyFilteringOption"></li>
+                  <li class="toggleOption" id="subclassFilteringOption"></li>
+                  <li class="toggleOption" id="disjointFilteringOption"></li>
+                  <li class="toggleOption" id="setOperatorFilteringOption"></li>
+                  <li class="slideOption" id="nodeDegreeFilteringOption"></li>
+                </ul>
+              </li>
+              <li id="gravityOption"><a href="#">Gravity</a>
+                <ul class="toolTipMenu gravity">
+                  <li class="slideOption" id="classSliderOption"></li>
+                  <li class="slideOption" id="datatypeSliderOption"></li>
+                </ul>
+              </li>
+              <li id="li_locationSearch"> <a title="Enter term." href="#" id="locateSearchResult">&#8853;</a></li>
+              <li class="searchMenu" id="searchMenuId">
+                <input class="searchInputText" type="text" id="search-input-text" placeholder="Search">
+                <ul class="searchMenuEntry" id="searchEntryContainer">
+                </ul>
+              </li>
+              <li id="li_right" style="float:left">
+                <a href="#" id="RightButton"></a>
+              </li>
+              <li id="li_left" style="float:left">
+                <a href="#" id="LeftButton"></a>
+              </li>
+            </ul>
+          </nav>
           <div id="graph"></div>
         </div>
-
         <aside id="detailsArea">
           <section id="generalDetails">
             <h1 id="title"></h1>
@@ -203,49 +245,6 @@
           </section>
         </aside>
 
-        <nav id="optionsArea">
-          <ul id="optionsMenu">
-            <li id="pauseOption"><a id="pause-button" href="#">Pause</a></li>
-            <li id="resetOption"><a id="reset-button" href="#" type="reset">Reset</a></li>
-            <li id="moduleOption"><a href="#">Modes</a>
-              <ul class="toolTipMenu module">
-                <li class="toggleOption" id="dynamicLabelWidth"></li>
-                <li class="toggleOption" id="pickAndPinOption"></li>
-                <li class="toggleOption" id="nodeScalingOption"></li>
-                <li class="toggleOption" id="compactNotationOption"></li>
-                <li class="toggleOption" id="colorExternalsOption"></li>
-              </ul>
-            </li>
-            <li id="filterOption"><a href="#">Filter</a>
-              <ul class="toolTipMenu filter">
-                <li class="toggleOption" id="datatypeFilteringOption"></li>
-                <li class="toggleOption" id="objectPropertyFilteringOption"></li>
-                <li class="toggleOption" id="subclassFilteringOption"></li>
-                <li class="toggleOption" id="disjointFilteringOption"></li>
-                <li class="toggleOption" id="setOperatorFilteringOption"></li>
-                <li class="slideOption" id="nodeDegreeFilteringOption"></li>
-              </ul>
-            </li>
-            <li id="gravityOption"><a href="#">Gravity</a>
-              <ul class="toolTipMenu gravity">
-                <li class="slideOption" id="classSliderOption"></li>
-                <li class="slideOption" id="datatypeSliderOption"></li>
-              </ul>
-            </li>
-            <li id="li_locationSearch"> <a title="Enter term." href="#" id="locateSearchResult">&#8853;</a></li>
-            <li class="searchMenu" id="searchMenuId">
-              <input class="searchInputText" type="text" id="search-input-text" placeholder="Search">
-              <ul class="searchMenuEntry" id="searchEntryContainer">
-              </ul>
-            </li>
-            <li id="li_right" style="float:left">
-              <a href="#" id="RightButton"></a>
-            </li>
-            <li id="li_left" style="float:left">
-              <a href="#" id="LeftButton"></a>
-            </li>
-          </ul>
-        </nav>
       </main>
     </div>
     <!-- /page content -->
@@ -254,15 +253,15 @@
 </div>
 
 <!-- jQuery -->
-<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
 <!--web owl -->
-<script src="../vendors/webvowl_1.0.4/js/d3.min.js"></script>
-<script src="../vendors/webvowl_1.0.4/js/webvowl.js"></script>
-<script src="../vendors/webvowl_1.0.4/js/webvowl.app.js"></script>
+<script src="vendors/webvowl_1.0.4/js/d3.min.js"></script>
+<script src="vendors/webvowl_1.0.4/js/webvowl.js"></script>
+<script src="vendors/webvowl_1.0.4/js/webvowl.app.js"></script>
 <script>
     window.onload = webvowl.app().initialize;
 </script>
