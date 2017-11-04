@@ -201,7 +201,7 @@ body, main {
 
 nav#optionsArea {
     height: 40%;
-    padding: 0;
+    padding-top:20px;
     width: 81%;
     background: transparent;
 }

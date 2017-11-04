@@ -92,7 +92,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="">
               <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="images/img.jpg" alt="">Vindula Jayawardana
+                <img src="production/images/img.jpg" alt="">Vindula Jayawardana
                 <span class=" fa fa-angle-down"></span>
               </a>
               <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -103,7 +103,7 @@
                   </a>
                 </li>
                 <li><a href="javascript:;">Help</a></li>
-                <li><a href="login.jsp"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                <li><a href="login.jsp"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
               </ul>
             </li>
           </ul>
@@ -116,143 +116,19 @@
     <div class="right_col" role="main">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-          <form action = "Request" method = "GET">
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12">Case in Natural Language </label>
               <div class="col-md-9 col-sm-9 col-xs-12">
-                <textarea class="resizable_textarea form-control" placeholder="Enter your full case in details as possible." name="query"></textarea>
+                <textarea class="resizable_textarea form-control" placeholder="Enter your full case in details as possible." id="query"></textarea>
               </div>
             </div>
           <br>
-          <button type="submit" class="btn btn-default"  style="float: right;">Search</button>
-          </form>
+          <button type="submit" class="btn btn-default"  style="float: right;" id="btnSearch">Search</button>
           </div>
         </div>
 
             <!-- end of accordion -->
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h2>Related Previous Cases</h2>
-            <div class="clearfix"></div>
-          </div>
-          <div class="x_content">
-            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%" style="word-wrap: break-word!important;">
-              <thead>
-              <tr>
-                <th>Case ID </th>
-                <th>Case Name</th>
-                <th>Court</th>
-                <th>Published Date</th>
-                <th>Judges</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-              <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr> <tr>
-                <td>14-16785</td>
-                <td><a href="http://caselaw.findlaw.com/summary/opinion/us-9th-circuit/2017/08/29/280333.html">Gregg v. Hawaii Department of Public Safety</a></td>
-                <td>United States Ninth Circuit</td>
-                <td>2017/08/29</td>
-                <td>FISHER</td>
-              </tr>
-
-
-              </tbody>
-            </table>
-
-
-          </div>
-        </div>
+      <div id="result"></div>
       </div>
     </div>
     <!-- /page content -->
@@ -286,6 +162,19 @@
 <script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
 <script src="vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $('#btnSearch').click(function(event) {
+            var name = $('#query').val();
+            $.get('RequestServlet', {
+                query : name
+            }, function(responseText) {
+                $('#result').html(responseText);
+            });
+        });
+    });
+</script>
+</body>
 <!-- Custom Theme Scripts -->
 <script src="build/js/custom.min.js"></script>
 	
